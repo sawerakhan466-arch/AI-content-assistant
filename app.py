@@ -109,7 +109,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # App Header
-st.markdown('<div class="genz-title">✨ CONTENT SLAYER ⚡</div>', unsafe_allow_html=True)
+st.markdown('<div class="genz-title">✨ AI CONTENT ASSISTANT⚡</div>', unsafe_allow_html=True)
 st.markdown('<div class="genz-subtitle">AI-POWERED POST GENERATOR • NO CAP 🧢</div>', unsafe_allow_html=True)
 
 # Retrieve API Key
