@@ -5,14 +5,23 @@ from groq import Groq
 # Page Configuration
 st.set_page_config(page_title="AI Content Assistant", page_icon="⚡", layout="centered")
 
-# Inject Custom Gen Z CSS Styling
+# Inject Custom Styling
 st.markdown("""
     <style>
     /* Main Background & Font */
     .stApp {
-        background-color: #FFB6C1;
-        color: #f1f5f9;
+        background-color: #FFB6C1 !important;
+        color: #1e1e1e !important;
         font-family: 'Inter', sans-serif;
+    }
+    
+    /* Form Wrapper Background */
+    div[data-testid="stForm"] {
+        background-color: #ffffff !important;
+        border: 3px solid #ff007f !important;
+        border-radius: 20px !important;
+        padding: 25px !important;
+        box-shadow: 6px 6px 0px #7928ca !important;
     }
     
     /* Neon Title Styling */
@@ -29,44 +38,70 @@ st.markdown("""
     .genz-subtitle {
         text-align: center;
         color: #ff007f;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 1px;
         margin-bottom: 30px;
     }
 
+    /* All Input Labels */
+    label, p {
+        color: #1e1e1e !important;
+        font-weight: 700 !important;
+    }
+
     /* Input Boxes & Dropdowns Style */
-    div[data-baseweb="select"] > div, div[data-baseweb="input"] > div, textarea {
-        background-color: #1a1c23 !important;
+    div[data-baseweb="select"] > div, div[data-baseweb="input"] > div {
+        background-color: #fff0f5 !important;
         border: 2px solid #7928ca !important;
         border-radius: 12px !important;
-        color: #ffffff !important;
-        box-shadow: 4px 4px 0px #ff007f !important;
+        color: #1e1e1e !important;
     }
     
-    /* Submit Button Style */
-    .stButton > button {
+    /* TEXT AREA BOX FIX (WHITE/LIGHT PINK BACKGROUND) */
+    textarea {
+        background-color: #ffffff !important;
+        color: #1e1e1e !important;
+        border: 2px solid #ff007f !important;
+        border-radius: 12px !important;
+        box-shadow: none !important;
+        font-weight: 500 !important;
+    }
+
+    textarea::placeholder {
+        color: #888888 !important;
+    }
+    
+    /* SUBMIT BUTTON FIX (DARK GRADIENT WITH VISIBLE WHITE TEXT) */
+    div[data-testid="stFormSubmitButton"] > button {
         background: linear-gradient(135deg, #ff007f 0%, #7928ca 100%) !important;
         color: #ffffff !important;
         font-weight: 800 !important;
         font-size: 1.1rem !important;
-        border: 2px solid #00dfd8 !important;
+        border: 2px solid #7928ca !important;
         border-radius: 14px !important;
         padding: 12px 24px !important;
-        box-shadow: 5px 5px 0px #00dfd8 !important;
-        transition: all 0.2s ease-in-out !important;
+        box-shadow: 4px 4px 0px #00dfd8 !important;
+        width: 100% !important;
     }
     
-    .stButton > button:hover {
+    div[data-testid="stFormSubmitButton"] > button p {
+        color: #ffffff !important;
+        font-size: 1.1rem !important;
+        font-weight: 800 !important;
+    }
+
+    div[data-testid="stFormSubmitButton"] > button:hover {
         transform: translate(-2px, -2px) !important;
-        box-shadow: 7px 7px 0px #00dfd8 !important;
+        box-shadow: 6px 6px 0px #00dfd8 !important;
     }
 
     /* Content Card Output Box */
     .generated-card {
-        background: #161822;
+        background: #ffffff;
         border: 3px solid #00dfd8;
         border-radius: 16px;
         padding: 24px;
+        color: #1e1e1e;
         box-shadow: 6px 6px 0px #ff007f;
         margin-top: 20px;
     }
