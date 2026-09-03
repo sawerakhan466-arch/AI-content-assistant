@@ -10,7 +10,7 @@ st.markdown("""
     <style>
     /* Main Background & Font */
     .stApp {
-        background-color: #0d0e15;
+        background-color: #FFB6C1;
         color: #f1f5f9;
         font-family: 'Inter', sans-serif;
     }
