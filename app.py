@@ -78,7 +78,7 @@ if submit_button:
                         {"role": "system", "content": "You are a creative social media manager."},
                         {"role": "user", "content": prompt}
                     ],
-                    model="llama-3.1-8b-instant",
+                    model="openai/gpt-oss-120b",
                     temperature=0.7,
                 )
                 
